@@ -23,13 +23,22 @@ client.on('ready', () => {
 
     fs.readFile("image.jpg", (err, data) => {
         if (err) {
-            // console.log(err)
+            console.log(err)
         } else {
-            const run = async () => {
-                const contact = ['6261452510',"8964803609","7999970702","8959567886","9179725663",]
-                const media = await MessageMedia.fromUrl("https://fastly.picsum.photos/id/428/536/354.jpg?hmac=39bUBapsMK9rz_caQW-lmClLVRgFZiS23LkHtRFdHXw");
-                console.log(media)
-                client.sendMessage("918959567886@c.us", media)
+            const run = () => {
+                const contact = ['7999970702', '7999970702', '7999970702', '7999970702', '7999970702', '7999970702', '7999970702', '7999970702', '7999970702', '7999970702', '7999970702', '7999970702', '7999970702', '7999970702', '7999970702', '7999970702', '7999970702', '7999970702', '7999970702', '7999970702', '7999970702', '7999970702', '7999970702', '7999970702', '7999970702', '7999970702', '7999970702', '7999970702', '7999970702', '7999970702', '7999970702', '7999970702', '7999970702', '7999970702', '7999970702', '7999970702', '7999970702', '7999970702', '7999970702', '7999970702']
+
+                for (let i=0; i <= contact.length; i++) {
+
+                    setTimeout(async () => {
+                        const media = await MessageMedia.fromUrl("https://fastly.picsum.photos/id/428/536/354.jpg?hmac=39bUBapsMK9rz_caQW-lmClLVRgFZiS23LkHtRFdHXw");
+                        client.sendMessage(`91${contact[i]}@c.us`, media)
+                        console.log(contact[i])
+
+                    }, i * 1000)
+
+                }
+
             }
             run()
         }
