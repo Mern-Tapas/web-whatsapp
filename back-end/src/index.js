@@ -31,11 +31,11 @@ client.on('ready', () => {
                 for (let i = 0; i <= contacts.length; i++) {
 
                     setTimeout(async () => {
-                        const media = await MessageMedia.fromUrl("https://fastly.picsum.photos/id/428/536/354.jpg?hmac=39bUBapsMK9rz_caQW-lmClLVRgFZiS23LkHtRFdHXw");
-                        client.sendMessage(`91${contacts[i].contact}@c.us`, media)
+                        const media = await MessageMedia.fromFilePath('instagram@reality_advisor_indore.jpeg');
+                        const result = await client.sendMessage(`91${contacts[i].contact}@c.us`, media)
                         console.log(contacts[i].contact)
-
-                    }, i * 1000)
+                        // fs.appendFile("result.txt",`\n${result}`,(error)=>{console.log(error)})
+                    }, i * 2000)
 
                 }
 
